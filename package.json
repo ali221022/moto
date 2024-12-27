@@ -1,7 +1,7 @@
 {
-  "name": "burak",
+  "name": "moto",
   "version": "1.0.0",
-  "description": "This is burak project backend",
+  "description": "This is moto project backend",
   "main": "src/server.ts",
   "scripts": {
     "start": "ts-node src/server.ts",
@@ -10,7 +10,7 @@
     "train": "nodemon --exec ts-node src/train.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "MIT",
+  "author": "Ali221022",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",

@@ -7,8 +7,8 @@ import Errors, { HttpCode, Message } from "../libs/utils/Errors";
 
 const memberService = new MemberService();
 
-const restaurantController: T = {};
-restaurantController.goHome = (req: Request, res: Response) => {
+const motoController: T = {};
+motoController.goHome = (req: Request, res: Response) => {
   try {
     console.log("goHome");
     res.render("home");
@@ -19,7 +19,7 @@ restaurantController.goHome = (req: Request, res: Response) => {
   }
 };
 
-restaurantController.getSignup = (req: Request, res: Response) => {
+motoController.getSignup = (req: Request, res: Response) => {
   try {
     console.log("getSignup");
     res.render("signup");
@@ -29,10 +29,7 @@ restaurantController.getSignup = (req: Request, res: Response) => {
   }
 };
 
-restaurantController.processSignup = async (
-  req: AdminRequest,
-  res: Response
-) => {
+motoController.processSignup = async (req: AdminRequest, res: Response) => {
   try {
     console.log("processSignup");
     const file = req.file;
@@ -41,7 +38,7 @@ restaurantController.processSignup = async (
 
     const newMember: MemberInput = req.body;
     newMember.memberImage = file?.path.replace(/\\/g, "/");
-    newMember.memberType = MemberType.RESTAURANT;
+    newMember.memberType = MemberType.MOTO;
     const result = await memberService.processSignup(newMember);
 
     req.session.member = result;
@@ -58,7 +55,7 @@ restaurantController.processSignup = async (
   }
 };
 
-restaurantController.getLogin = (req: Request, res: Response) => {
+motoController.getLogin = (req: Request, res: Response) => {
   try {
     console.log("getLogin");
     res.render("login");
@@ -68,10 +65,7 @@ restaurantController.getLogin = (req: Request, res: Response) => {
   }
 };
 
-restaurantController.processLogin = async (
-  req: AdminRequest,
-  res: Response
-) => {
+motoController.processLogin = async (req: AdminRequest, res: Response) => {
   try {
     console.log("processLogin");
 
@@ -94,7 +88,7 @@ restaurantController.processLogin = async (
   }
 };
 
-restaurantController.logOut = async (req: AdminRequest, res: Response) => {
+motoController.logOut = async (req: AdminRequest, res: Response) => {
   try {
     console.log("logOut");
     req.session.destroy(function () {
@@ -106,7 +100,7 @@ restaurantController.logOut = async (req: AdminRequest, res: Response) => {
   }
 };
 
-restaurantController.getUsers = async (req: Request, res: Response) => {
+motoController.getUsers = async (req: Request, res: Response) => {
   try {
     console.log("getUsers");
     const result = await memberService.getUsers();
@@ -118,7 +112,7 @@ restaurantController.getUsers = async (req: Request, res: Response) => {
   }
 };
 
-restaurantController.updateChosenUser = async (req: Request, res: Response) => {
+motoController.updateChosenUser = async (req: Request, res: Response) => {
   try {
     console.log("updateChosenUser");
     const result = await memberService.updateChosenUser(req.body);
@@ -131,10 +125,7 @@ restaurantController.updateChosenUser = async (req: Request, res: Response) => {
   }
 };
 
-restaurantController.checkAuthSession = async (
-  req: AdminRequest,
-  res: Response
-) => {
+motoController.checkAuthSession = async (req: AdminRequest, res: Response) => {
   try {
     console.log("checkAuthSession");
     if (req.session?.member)
@@ -146,12 +137,12 @@ restaurantController.checkAuthSession = async (
   }
 };
 
-restaurantController.verifyRestaurant = (
+motoController.verifyMoto = (
   req: AdminRequest,
   res: Response,
   next: NextFunction
 ) => {
-  if (req.session?.member?.memberType === MemberType.RESTAURANT) {
+  if (req.session?.member?.memberType === MemberType.MOTO) {
     req.member = req.session.member;
     next();
   } else {
@@ -162,4 +153,4 @@ restaurantController.verifyRestaurant = (
   }
 };
 
-export default restaurantController;
+export default motoController;

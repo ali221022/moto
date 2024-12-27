@@ -1,62 +1,59 @@
-import  express from "express";
+import express from "express";
 const routerAdmin = express.Router();
-import restaurantController from "./controllers/restaurant.controller";
+import motoController from "./controllers/motocontroller";
 import productController from "./controllers/product.controller";
-import  makeUploader  from "./libs/utils/uploader";
+import makeUploader from "./libs/utils/uploader";
 
 /** Restaurant */
-routerAdmin.get("/", restaurantController.goHome);
+routerAdmin.get("/", motoController.goHome);
 
 routerAdmin
-.get("/login", restaurantController.getLogin)
-.post("/login", restaurantController.processLogin);
+  .get("/login", motoController.getLogin)
+  .post("/login", motoController.processLogin);
 
 routerAdmin
-.get("/signup", restaurantController.getSignup)
-.post(
+  .get("/signup", motoController.getSignup)
+  .post(
     "/signup",
-     makeUploader("members").single("memberImage"), 
-     restaurantController.processSignup
-    );
+    makeUploader("members").single("memberImage"),
+    motoController.processSignup
+  );
 
-routerAdmin.get("/logout", restaurantController.logOut);
+routerAdmin.get("/logout", motoController.logOut);
 
-routerAdmin.get("/check-me", restaurantController.checkAuthSession);
-
-
+routerAdmin.get("/check-me", motoController.checkAuthSession);
 
 /** Product */
 
 routerAdmin.get(
-    "/product/all", 
-    restaurantController.verifyRestaurant, 
-    productController.getAllProducts
+  "/product/all",
+  motoController.verifyMoto,
+  productController.getAllProducts
 );
 routerAdmin.post(
-    "/product/create", 
-    restaurantController.verifyRestaurant,
+  "/product/create",
+  motoController.verifyMoto,
   //  uploadProductImage.single('productImage'),
-    makeUploader("products").array("productImages", 5),
-    productController.createNewProduct
+  makeUploader("products").array("productImages", 5),
+  productController.createNewProduct
 );
 routerAdmin.post(
-    "/product/:id", 
-    restaurantController.verifyRestaurant, 
-    productController.updateChosenProduct
+  "/product/:id",
+  motoController.verifyMoto,
+  productController.updateChosenProduct
 );
-
 
 /** User */
 
 routerAdmin.get(
-    "/user/all", 
-    restaurantController.verifyRestaurant, 
-    restaurantController.getUsers
+  "/user/all",
+  motoController.verifyMoto,
+  motoController.getUsers
 );
 routerAdmin.post(
-    "/user/edit", 
-    restaurantController.verifyRestaurant, 
-    restaurantController.updateChosenUser
+  "/user/edit",
+  motoController.verifyMoto,
+  motoController.updateChosenUser
 );
 
 export default routerAdmin;
