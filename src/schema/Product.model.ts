@@ -1,6 +1,5 @@
 import mongoose, { Schema } from "mongoose";
 import {
-  ProductVolume,
   EngineCapacity,
   ProductStatus,
   ProductCollection,
@@ -39,12 +38,6 @@ const productSchema = new Schema(
       type: String,
       enum: EngineCapacity,
       default: EngineCapacity.NORMAL,
-    },
-
-    productVolume: {
-      type: Number,
-      enum: ProductVolume,
-      default: ProductVolume.ONE,
     },
 
     productDesc: {
