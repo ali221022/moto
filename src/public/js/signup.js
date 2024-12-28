@@ -1,6 +1,6 @@
 console.log("Signup frontend javascript file");
 
-$(function() {
+//$(function() {
     const fileTarget = $(".file-box .upload-hidden");
     let filename;
 
@@ -23,7 +23,7 @@ $(function() {
             $(this).siblings(".upload-name").val(filename);
         }
     });
-   });
+//   });
 
 
   function validateSignupForm() {
@@ -31,12 +31,14 @@ $(function() {
     memberPhone = $(".member-phone").val(),
     memberPassword = $(".member-password").val(),
     confirmPassword = $(".confirm-password").val();
+    memberEmail = $(".member-email").val();
 
     if (
         memberNick === "" ||
         memberPhone === "" || 
         memberPassword === "" || 
-        confirmPassword === "" 
+        confirmPassword === "" ||
+        memberEmail === ""
     )  {
         alert("Please insert all required inputs!");
         return false;
@@ -47,10 +49,10 @@ $(function() {
         return false;
     }
 
-    const memberImage = $(".member-image").get(0).files[0] 
-    ? $(".member-image").get(0).files[0].name : null;
-    if(!memberImage) {
-        alert("Please insert restaurant image!");
-        return false;
-    }
+ //   const memberImage = $(".member-image").get(0).files[0] 
+ //   ? $(".member-image").get(0).files[0].name : null;
+ //   if(!memberImage) {
+ //       alert("Please insert restaurant image!");
+ //       return false;
+ //   }
   }
