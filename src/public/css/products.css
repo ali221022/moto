@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(-45deg, #110303bf, #e37813, #011c1aba, #968383);
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
 }
 
 .products-container a {
@@ -15,7 +15,7 @@
 }
 
 .products-container .nav-item a {
-  color: #e3c08d;
+  color: #aa782d;
 }
 
 .products-container .nav-item a.disabled {
@@ -79,7 +79,7 @@
   font-weight: 400;
   font-size: 30px;
   line-height: 25px;
-  color: #ffffff;
+  color: #9b3838;
 }
 
 .products-container .long-input {
@@ -97,7 +97,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 25px;
-  color: #ffffff;
+  color: #801c1c;
 }
 
 .products-container .long-input input {
@@ -115,7 +115,7 @@
   font-weight: 400;
   font-size: 15px;
   line-height: 26px;
-  color: #4f547b;
+  color: #801c1c;
 }
 
 .products-container .long-input textarea {
@@ -203,7 +203,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 25px;
-  color: #ffffff;
+  color: #801c1c;
 }
 
 .products-container .half-input input {
@@ -261,7 +261,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 25px;
-  color: #ffffff;
+  color: #801c1c;
 }
 
 .products-container #file {
