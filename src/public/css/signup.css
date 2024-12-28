@@ -6,7 +6,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background: linear-gradient(-45deg, #c54822, #ec2873, #107ba1, #23d5ab);
   -webkit-animation: gradient 15s ease infinite;
   animation: gradient 15s ease infinite;
   background-size: 200% 200%;
@@ -30,6 +30,7 @@
 
 .signup-container .signup-frame .sign-input-frame {
   position: relative;
+  margin-bottom: 40px;
   width: 100%;
   height: auto;
   display: flex;
@@ -38,7 +39,7 @@
 
 .signup-container .sign-input-frame .sign-up-frame {
   position: relative;
-  margin-top: 15px;
+  margin-top: 0px;
   width: 49%;
   height: auto;
   display: flex;

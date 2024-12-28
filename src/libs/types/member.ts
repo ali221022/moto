@@ -25,6 +25,7 @@ export interface MemberInput {
     memberNick: string;
     memberPhone: string;
     memberPassword: string;
+    memberEmail: string;
     memberAddress?: string;
     memberDesc?: string;
     memberImage?: string;
@@ -54,7 +55,7 @@ export interface ExtendedRequest extends Request {
 }
 
 export interface AdminRequest extends Request {
-    member: Member;
+     member: Member;
     session: Session & { member: Member };
     file: Express.Multer.File;
     files: Express.Multer.File[];

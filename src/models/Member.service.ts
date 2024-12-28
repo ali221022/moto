@@ -24,7 +24,6 @@ class MemberService {
       .findOne({ memberType: MemberType.MOTO })
       .lean()
       .exec();
-    result.target = "Test";
     if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
 
     return result;
@@ -127,8 +126,9 @@ class MemberService {
 
   public async processSignup(input: MemberInput): Promise<Member> {
     const exist = await this.memberModel
-      .findOne({ memberType: MemberType.MOTO })
+      .findOne({ memberType: MemberType.MOTO, memberEmail: input.memberEmail})
       .exec();
+      console.log("exist:", exist);
     if (exist) throw new Errors(HttpCode.BAD_REQUEST, Message.CREATE_FAILED);
 
     const salt = await bcrypt.genSalt();

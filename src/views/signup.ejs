@@ -4,11 +4,11 @@
 
 <body>
   <div class="signup-container">
-    <form onsubmit="return validateSignupForm()" action="/admin/signup" method="POST" enctype="multipart/form-data">
+    <form onsubmit="return validateSignupForm()" action="/admin/signup" method="POST" >
       <div class="signup-frame" style="width: 650px">
         <div class="signup-top">
           <span>Signup</span>
-          <div>Go back <a href="/admin" style="color: #6440fb">Home</a></div>
+          <div>Go back <a href="/admin" style="color: #7258e6">Home</a></div>
           <p>
             Already signed up?
             <a href="/admin/login" style="color: #6440fb">Login</a>
@@ -59,7 +59,22 @@
             />
           </div>
         </div>
+        <div class="sign-input-frame" style="justify-content: center">
+          <div class="sign-up-frame">
+            <label>Email *</label>
+            <input
+              type="email"
+              name="memberEmail"
+              class="member-email"
+              placeholder="Email"
+              required
+              value=""
+            />
+          </div>
+        </div>
+        
 
+        <!--
         <div class="signup-input-frame">
           <div class="media-frame">
             <img class="upload-img-frame" src="/img/default.jpeg" />
@@ -92,8 +107,9 @@
             </div>
           </div>
         </div>
+        -->
 
-        <input name="memberType" value="RESTAURANT" hidden />
+        <input name="memberType" value="MOTO" hidden />
 
         <button class="signup-btn btn" name="signup" type="submit">
           Signup

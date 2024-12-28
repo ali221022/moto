@@ -32,14 +32,21 @@ motoController.getSignup = (req: Request, res: Response) => {
 motoController.processSignup = async (req: AdminRequest, res: Response) => {
   try {
     console.log("processSignup");
-    const file = req.file;
-    if (!file)
+   // const file = req.file;
+   // if (!file)
+   //   throw new Errors(HttpCode.BAD_REQUEST, Message.SOMETHING_WENT_WRONG);
+   const { memberEmail } = req.body;
+    if (!memberEmail || !/^\S+@\S+\.\S+$/.test(memberEmail)) {
       throw new Errors(HttpCode.BAD_REQUEST, Message.SOMETHING_WENT_WRONG);
+    }
 
-    const newMember: MemberInput = req.body;
-    newMember.memberImage = file?.path.replace(/\\/g, "/");
-    newMember.memberType = MemberType.MOTO;
-    const result = await memberService.processSignup(newMember);
+      const newMember: MemberInput = req.body;
+      console.log("body:",newMember);
+    //  newMember.memberImage = file?.path.replace(/\\/g, "/");
+      newMember.memberImage = ""; // images bo'sh qiymat qaytaryapti
+      newMember.memberEmail = memberEmail;
+      newMember.memberType = MemberType.MOTO;
+      const result = await memberService.processSignup(newMember);
 
     req.session.member = result;
     req.session.save(function () {

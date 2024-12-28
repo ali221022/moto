@@ -1,6 +1,6 @@
 import express from "express";
 const routerAdmin = express.Router();
-import motoController from "./controllers/motocontroller";
+import motoController from "./controllers/moto.controller";
 import productController from "./controllers/product.controller";
 import makeUploader from "./libs/utils/uploader";
 
@@ -15,7 +15,7 @@ routerAdmin
   .get("/signup", motoController.getSignup)
   .post(
     "/signup",
-    makeUploader("members").single("memberImage"),
+   // makeUploader("members").single("memberImage"),
     motoController.processSignup
   );
 
