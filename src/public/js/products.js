@@ -36,6 +36,7 @@ function validateForm() {
     const productCollection = $(".product-collection").val();
     const productDesc = $(".product-desc").val();
     const productStatus = $(".product-status").val();
+    const productEngineCapacity = $(".product-size").val();
     
     if (
         productName === "" ||
@@ -43,8 +44,8 @@ function validateForm() {
         productLeftCounts === ""  ||
         productCollection === ""  ||
         productDesc === ""  ||
-        productStatus === "" 
-
+        productStatus === "" ||
+        productEngineCapacity === ""
     )  {
         alert("Please insert all details!");
         return false;
@@ -56,10 +57,10 @@ function previewFileHandler(input, order) {
     console.log("input:", input);
     const file = $(`.${imgClassName}`).get(0).files[0];
     const fileType = file["type"];
-    const validImageType = ["image/jpg", "image/jpeg", "image/png"];
+    const validImageType = ["image/jpg", "image/jpeg", "image/png", "image/jfif"];
     
     if(!validImageType.includes(fileType)) {
-        alert("Please insert only jpeg, jpg and png!");
+        alert("Please insert only jpeg, jpg, jfif and png!");
     } else {
         if(file) {
             const reader = new FileReader();

@@ -4,7 +4,7 @@ import motoController from "./controllers/moto.controller";
 import productController from "./controllers/product.controller";
 import makeUploader from "./libs/utils/uploader";
 
-/** Restaurant */
+/** MOTO SHOP */
 routerAdmin.get("/", motoController.goHome);
 
 routerAdmin

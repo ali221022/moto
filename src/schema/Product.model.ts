@@ -1,8 +1,8 @@
 import mongoose, { Schema } from "mongoose";
 import {
-  EngineCapacity,
   ProductStatus,
   ProductCollection,
+  productEngineCapacity,
 } from "../libs/enums/product.enum";
 
 const productSchema = new Schema(
@@ -23,6 +23,7 @@ const productSchema = new Schema(
       type: String,
       required: true,
     },
+    
 
     productPrice: {
       type: Number,
@@ -34,10 +35,10 @@ const productSchema = new Schema(
       required: true,
     },
 
-    productSize: {
+    productEngineCapacity: {
       type: String,
-      enum: EngineCapacity,
-      default: EngineCapacity.NORMAL,
+      enum: productEngineCapacity,
+      default: productEngineCapacity.NORMAL,
     },
 
     productDesc: {
@@ -60,7 +61,7 @@ const productSchema = new Schema(
 );
 
 productSchema.index(
-  { productName: 1, productSize: 1, productVolume: 1 },
+  { productName: 1, productEngineCapacity: 1, },
   { unique: true }
 );
 

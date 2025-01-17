@@ -1,4 +1,4 @@
-export enum EngineCapacity {
+export enum productEngineCapacity {
   SMALL = "125",
   NORMAL = "250",
   LARGE = "500",
@@ -13,9 +13,9 @@ export enum ProductStatus {
 }
 
 export enum ProductCollection {
-  SportBikes = "Sport Bikes",
+  SportBikes = "SportBikes",
   TouringBikes = "TouringBikes",
   CafeRacerBikes = "CafeRacerBikes",
-  ElectricMotorcycles = "Electric Motorcycles",
+  ElectricMotorcycles = "ElectricMotorcycles",
   Scooters = "Scooters",
 }

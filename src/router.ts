@@ -7,7 +7,7 @@ import productController from "./controllers/product.controller";
 import orderController from "./controllers/order.controller";
 
 /*** Member */
-router.get("/member/restaurant", memberController.getMoto);
+router.get("/member/moto", memberController.getMoto);
 
 router.post("/member/login", memberController.login);
 

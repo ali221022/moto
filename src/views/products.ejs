@@ -48,6 +48,7 @@
                 <td><%= key + 1 %></td>
                 <td><%= value.productName %></td>
                 <td><%= value.productCollection %></td>
+                <td><%= value.productEngineCapasity %></td>
                 <td><%= value.productPrice %></td>
                 <td><%= value.productLeftCount %></td>
                 <td>
@@ -120,21 +121,21 @@
             <div class="half-input">
               <label>Motorcycle Type</label>
               <select class="product-collection" name="productCollection">
-                <option value="SportBikes" selected>SportBikes</option>
-                <option value="CruiserBikes">CruiserBikes</option>
-                <option value="TouringBikes">TouringBikes</option>
-                <option value="ElectricMotorcycles">ElectricMotorcycles</option>
+                <option value="SportBikes" selected>Sport Bikes</option>
+                <option value="CafeRacerBikes">CafeRacer Bikes</option>
+                <option value="TouringBikes">Touring Bikes</option>
+                <option value="ElectricMotorcycles">Electric Motorcycles</option>
                 <option value="Scooters">Scooters</option>
               </select>
             </div>
 
             <div class="half-input" id="product-collection">
               <label> EngineCapacity</label>
-              <select class="product-size" name="productSize">
-                <option value="SMALL">Small</option>
-                <option value="NORMAL" selected>Normal</option>
-                <option value="LARGE">Large</option>
-                <option value="EXTRA_LARGE">Extra Large</option>
+              <select class="product-size" name="engineCapacity">
+                <option value="125">Small</option>
+                <option value="250" selected>Normal</option>
+                <option value="500">Large</option>
+                <option value="1000">Extra Large</option>
               </select>
             </div>
           </div>
