@@ -79,7 +79,7 @@ productController.createNewProduct = async (
     data.productImages = req.files?.map((ele) => {
       return ele.path.replace(/\\/g, "/");
     });
-
+     console.log("ccc:", data);
     await productService.ceateNewProduct(data);
     res.send(
       `<script> alert("${"Sucessful creation!"}"); window.location.replace('/admin/product/all') </script>`

@@ -1,8 +1,8 @@
-export enum productEngineCapacity {
-  SMALL = "125",
-  NORMAL = "250",
-  LARGE = "500",
-  EXTRA_LARGE = "1000",
+export enum ProductEngineCapacity {
+  SMALL = 125,
+  NORMAL = 250,
+  LARGE = 500,
+  EXTRA_LARGE = 1000,
 }
 
 

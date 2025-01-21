@@ -2,7 +2,7 @@ import mongoose, { Schema } from "mongoose";
 import {
   ProductStatus,
   ProductCollection,
-  productEngineCapacity,
+  ProductEngineCapacity,
 } from "../libs/enums/product.enum";
 
 const productSchema = new Schema(
@@ -36,9 +36,9 @@ const productSchema = new Schema(
     },
 
     productEngineCapacity: {
-      type: String,
-      enum: productEngineCapacity,
-      default: productEngineCapacity.NORMAL,
+      type: Number,
+      enum: ProductEngineCapacity,
+      default: ProductEngineCapacity.NORMAL,
     },
 
     productDesc: {
@@ -60,9 +60,9 @@ const productSchema = new Schema(
   { timestamps: true } // updatedAt, createdAt
 );
 
-productSchema.index(
-  { productName: 1, productEngineCapacity: 1, },
-  { unique: true }
-);
+ productSchema.index(
+ { productName: 1, productEngineCapacity: 1, },  
+ { unique: true }
+ );
 
 export default mongoose.model("Product", productSchema);

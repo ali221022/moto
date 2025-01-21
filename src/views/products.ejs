@@ -37,7 +37,7 @@
                 <th scope="col">T/r</th>
                 <th scope="col">Motorcycle Name</th>
                 <th scope="col">Motorcycle Type</th>
-                <th scope="col">Engine Capacity</th>
+              <!--  <th scope="col">Engine Capacity</th> -->
                 <th scope="col">Motorcycle Price</th>
                 <th scope="col">Left in Stock</th>
                 <th scope="col">Status</th>
@@ -48,7 +48,7 @@
                 <td><%= key + 1 %></td>
                 <td><%= value.productName %></td>
                 <td><%= value.productCollection %></td>
-                <td><%= value.productEngineCapasity %></td>
+               <!-- <td><%= value.productEngineCapasity %></td> -->
                 <td><%= value.productPrice %></td>
                 <td><%= value.productLeftCount %></td>
                 <td>
@@ -128,16 +128,17 @@
                 <option value="Scooters">Scooters</option>
               </select>
             </div>
-
+             <!--
             <div class="half-input" id="product-collection">
               <label> EngineCapacity</label>
-              <select class="product-size" name="engineCapacity">
+              <select class="product-size" name="productEngineCapacity">
                 <option value="125">Small</option>
                 <option value="250" selected>Normal</option>
                 <option value="500">Large</option>
                 <option value="1000">Extra Large</option>
               </select>
             </div>
+            -->
           </div>
           <div class="long-input">
             <label>Motorcycle Description</label>
@@ -197,8 +198,7 @@
                   class="image-five"
                   onchange="previewFileHandler(this, 5)"
                 />
-              </div>
-              <input name="restaurantIid" class="restaurant-id" hidden />
+              </div>             
             </div>
           </div>
 
